@@ -1,6 +1,9 @@
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
+function restart() {
+  location.reload();
+}
 function game() {
   var name1text = document.getElementById("name1");
   var name1 = "";
@@ -46,6 +49,48 @@ function game() {
     let colour2 = base2.charAt(0);
     let num1 = base1.charAt(1);
     let num2 = base2.charAt(1);
+    if(colour1 == "r") {
+      if(num1 == "8") {
+        document.write("<p>Player 1 drew an <span style='background-color:red;padding:4px;color:white'>   " + num1 + "   </span><p>")
+      } else {
+        document.write("<p>Player 1 drew a <span style='background-color:red;padding:4px;color:white'>   " + num1 + "   </span><p>")
+      }
+    }
+    if(colour1 == "y") {
+      if(num1 == "8") {
+        document.write("<p>Player 1 drew an <span style='background-color:yellow;padding:4px'>   " + num1 + "   </span><p>")
+      } else {
+        document.write("<p>Player 1 drew a <span style='background-color:yellow;padding:4px'>   " + num1 + "   </span><p>")
+      }
+    }
+    if(colour1 == "b") {
+      if(num1 == "8") {
+        document.write("<p>Player 1 drew an <span style='background-color:black;padding:4px;color:white'>   " + num1 + "   </span><p>")
+      } else {
+        document.write("<p>Player 1 drew a <span style='background-color:black;padding:4px;color:white'>   " + num1 + "   </span><p>")
+      }
+    }
+    if(colour2 == "r") {
+      if(num2 == "8") {
+        document.write("<p>Player 2 drew an <span style='background-color:red;padding:4px;color:white'>   " + num2 + "   </span><p>")
+      } else {
+        document.write("<p>Player 2 drew a <span style='background-color:red;padding:4px;color:white'>   " + num2 + "   </span><p>")
+      }
+    }
+    if(colour2 == "y") {
+      if(num2 == "8") {
+        document.write("<p>Player 2 drew an <span style='background-color:yellow;padding:4px'>   " + num2 + "   </span><p>")
+      } else {
+        document.write("<p>Player 2 drew a <span style='background-color:yellow;padding:4px'>   " + num2 + "   </span><p>")
+      }
+    }
+    if(colour2 == "b") {
+      if(num2 == "8") {
+        document.write("<p>Player 2 drew an <span style='background-color:black;padding:4px;color:white'>   " + num2 + "   </span><p>")
+      } else {
+        document.write("<p>Player 2 drew a <span style='background-color:black;padding:4px;color:white'>   " + num2 + "   </span><p>")
+      }
+    }
     if(colour1 == colour2) {
       if(num1 > num2) {
         score1++;
@@ -85,4 +130,5 @@ function game() {
   } else {
     document.write("<p>" + name2 + " won the game, better luck next time " + name1 + "<p>");
   }
+  document.write("<h3>Would you like to play again?</h3>\n<button onclick='restart()'>Yes</button>");
 }
